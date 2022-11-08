@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sign up</h1>
+
+    </header>
+    <main>
+        <form action="/Register.php" method="post">
+            <article>
+                <label> insert First Name! </label>
+                <input name="firstName" type="text">
+                <br>
+                <label> insert aftername! </label>
+                <input name="afterName" type="text">
+                <br>
+                <label> select Username</label>
+                <input name="Username" type="text">
+                <br>
+                <label>choose Password</label>
+                <input name="pwd" type="password">
+                <br>
+                <input type="submit" value="Create Account">
+
+                <a href="login.html">login</a>
+            </article>
+        </form>
+        <!-- fortsätt och skapa signUp page-->
+    </main>
+</body>
+
+</html>
