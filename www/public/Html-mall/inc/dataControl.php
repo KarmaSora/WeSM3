@@ -19,8 +19,8 @@ session_start();
     $file = "person.dat";
     include("Person.php");
 
-if(!isset($_POST['user'])){
-    header("location: login.html");
+if(!isset($_POST['username'])){
+    header("location: index.php");
     exit;
 }
 
@@ -28,14 +28,15 @@ if(!isset($_POST['user'])){
     $personArray = unserialize(file_get_contents($file));
 
 
-    $user = $_POST['user'];
-    $pwd = $_POST['pwd'];
+    $user = $_POST['username'];
+    $pwd = $_POST['password'];
 
+  
 
 
 for($i=0; $i<count($personArray); $i++){
     if($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()){
-        header("location: userPage.php" . "?name=" . $personArray[$i]->getUserName());
+        header("location: index.php" . "?name=" . $personArray[$i]->getUserName());
         exit;
     }
 }

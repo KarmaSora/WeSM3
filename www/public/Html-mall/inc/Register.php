@@ -7,7 +7,7 @@
 <body>
 
 <?php // filen motsvarat personWrite.php i M2
-    include("Person.php");
+    include("./Person.php");
     $personArray = array();
 
     $newFirstName = $_POST['firstName'];
@@ -37,6 +37,6 @@
 
 ?>
 
-<a href="loggIn.php">Go to login page!</a>
+<a href="../index.php">Go to login page!</a>
 </body>
 </html>

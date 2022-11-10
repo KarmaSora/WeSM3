@@ -7,6 +7,15 @@ if (isset($_POST['password'])) {
     $_SESSION['inLoggad'] = true;
   }
 }
+
+/* for($i=0; $i<count($personArray); $i++){
+  if($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()){
+
+    $_SESSION['inLoggad'] = true;
+  } 
+}
+*/ 
+
 ?>
 
 <!doctype html>
