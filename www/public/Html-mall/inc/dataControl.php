@@ -40,6 +40,8 @@ for ($i = 0; $i < count($personArray); $i++) {
     if ($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()) {
       $_SESSION['inLoggad'] = true;
       $_SESSION['username'] = $_POST['username'];
+      header("location: ../index.php");
+
       exit;
     }
   }
