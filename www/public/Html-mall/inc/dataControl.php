@@ -25,21 +25,23 @@ if(!isset($_POST['username'])){
 }
 
     if(file_exists($file))
-    $personArray = unserialize(file_get_contents($file));
-
+        $personArray = unserialize(file_get_contents($file));
 
     $user = $_POST['username'];
     $pwd = $_POST['password'];
 
-  
-
-
-for($i=0; $i<count($personArray); $i++){
-    if($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()){
-        header("location: index.php" . "?name=" . $personArray[$i]->getUserName());
-        exit;
+// for($i=0; $i<count($personArray); $i++){
+//     if($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()){
+//         header("location: ../index.php");
+//         exit;
+//     }
+// }
+for ($i = 0; $i < count($personArray); $i++) {
+    if ($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()) {
+      $_SESSION['inLoggad'] = true;
+      $_SESSION['username'] = $_POST['username'];
+      exit;
     }
-}
-header("location: login.html");
+  }
 
-?>
+header("location: ../index.html");

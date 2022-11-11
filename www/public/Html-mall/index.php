@@ -27,7 +27,7 @@ session_start();
 					<li><a href="index.php?page=blogg">Blogg</a></li>
 					<li><a href="index.php?page=bilder">Bilder</a></li>
 					<li><a href="index.php?page=Kontakt">Kontakt</a></li>
-					<li><a href="inc/signUp.php"> signUp page</a>
+					<li><a href="inc/signUp.html"> signUp page</a>
 
 					<li><a href="inc/loggOut.php"> logg out</a>
 
@@ -98,7 +98,7 @@ session_start();
 
 		<?php 
 		if( isset($_SESSION['inLoggad'])){
-			echo("You are logged in as " . $_SESSION['user']);
+			echo("You are logged in as " . $_SESSION['username']);
 		}
 		?>
 			<hgroup>

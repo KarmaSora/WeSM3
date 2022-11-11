@@ -2,19 +2,10 @@
 // PUNKT 1
 session_start();
 // PUNKT 2    
-if (isset($_POST['password'])) {
-  if ($_POST['password'] == '12345' && $_POST['username'] == 'admin') {
-    $_SESSION['inLoggad'] = true;
-  }
-}
 
-/* for($i=0; $i<count($personArray); $i++){
-  if($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()){
 
-    $_SESSION['inLoggad'] = true;
-  } 
-}
-*/ 
+//include("./Html-mall/inc/logginController.php");
+
 
 ?>
 
@@ -66,24 +57,24 @@ if (isset($_POST['password'])) {
           default:
             include('pages/start.php');
         }
-      
+
         ?>
 
-<?php     
+        <?php
         // PUNKT 3    
-        if(isset($_SESSION['inLoggad'])){
+        if (isset($_SESSION['inLoggad'])) {
           //alternativt sida för inloggning
-    
-        }else{
-    ?>
 
-    <form method="post">
-       Username: <input type="text" name="username" size="20" />
-       Password: <input type="password" name="password" size="20" />
-       <input type="submit" value="Submit" name="login"/>
-    </form>
-    <!-- Här kommer resten av sidan som vanliga besökare ser -->
-    <?php } ?>
+        } else {
+        ?>
+
+          <form method="post">
+            Username: <input type="text" name="username" size="20" />
+            Password: <input type="password" name="password" size="20" />
+            <input type="submit" value="Submit" name="login" />
+          </form>
+          <!-- Här kommer resten av sidan som vanliga besökare ser -->
+        <?php } ?>
 
 
 
