@@ -14,21 +14,21 @@ session_start();
 // } else {
 //     header("Location: ../index.php");
 // }
-    // För att förenkla användandet av mb_ funktioner
-    mb_internal_encoding("UTF-8");     
-    $file = "person.dat";
-    include("Person.php");
+// För att förenkla användandet av mb_ funktioner
+mb_internal_encoding("UTF-8");
+$file = "person.dat";
+include("Person.php");
 
-if(!isset($_POST['username'])){
+if (!isset($_POST['username'])) {
     header("location: index.php");
     exit;
 }
 
-    if(file_exists($file))
-        $personArray = unserialize(file_get_contents($file));
+if (file_exists($file))
+    $personArray = unserialize(file_get_contents($file));
 
-    $user = $_POST['username'];
-    $pwd = $_POST['password'];
+$user = $_POST['username'];
+$pwd = $_POST['password'];
 
 // for($i=0; $i<count($personArray); $i++){
 //     if($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()){
@@ -38,12 +38,12 @@ if(!isset($_POST['username'])){
 // }
 for ($i = 0; $i < count($personArray); $i++) {
     if ($user == $personArray[$i]->getUserName() && $pwd == $personArray[$i]->getPassWord()) {
-      $_SESSION['inLoggad'] = true;
-      $_SESSION['username'] = $_POST['username'];
-      header("location: ../index.php");
+        $_SESSION['inLoggad'] = true;
+        $_SESSION['username'] = $_POST['username'];
+        header("location: ../index.php");
 
-      exit;
+        exit;
     }
-  }
+}
 
 header("location: ../index.html");

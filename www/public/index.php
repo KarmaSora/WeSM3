@@ -4,9 +4,6 @@ session_start();
 // PUNKT 2    
 
 
-//include("./Html-mall/inc/logginController.php");
-
-
 ?>
 
 <!doctype html>
@@ -68,7 +65,7 @@ session_start();
         } else {
         ?>
 
-          <form method="post">
+          <form action="/Html-mall/inc/dataControl.php" method="post">
             Username: <input type="text" name="username" size="20" />
             Password: <input type="password" name="password" size="20" />
             <input type="submit" value="Submit" name="login" />
